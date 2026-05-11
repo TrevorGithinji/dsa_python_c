@@ -140,6 +140,138 @@ count_and_index()
     #count how many times a value appearee within a given text
     #
 
+def student_f1():
+    students = ["Bob", "Yout", "Cherry", "Godi"]
+
+    print("The students registered:", students)
+    students.append("Brown")
+    print("The students appended:", students)
+    students.insert(3, "bob")
+    print("The students inserted:", students)
+
+    popped = students.pop()
+    print("The students popped:", popped)
+    print("The students removed:", students)
+    students.reverse()
+    print("The students reversed:", students)
+    len(students)
+    print(len(students))
+student_f1()
+
+def create_dict():
+    student = {
+        "name": "Bob",
+        "age": 21,
+        "hobby": "gooning"
+    }
+    print("pupil details", student)
+    print("Name:", student["name"])
+    print("age:", student.get("age"))
+
+create_dict()
+
+#
+def funcA(n):
+    if n > 0:
+        print("A:", n)
+        funcB(n - 1)
+
+def funcB(n):
+    if n > 0:
+        print("B:", n)
+        funcA(n-1)
+
+funcA(3)
+funcB(3)
+
+def head_count(n):
+    if n == 0:
+        return
+    head_count(n-1)
+    print(n)
+#the call is happening before the recursion
+head_count(3)
+
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n-1)
+
+print(factorial(5))
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+#two calls at the same time
+print(fibonacci(5))
+
+#recursion may have more readablilty
+#stack , head recurssion, store local variables and passing parameters
+#last in first out principle
+#once D is called it goes back to C and back to B
+#stack stays in your ram, once your device is switched off the data goes
+#Push
+#when stack is likely to exceed 1000
+#large inpit but small opertaions is ayt: ie
+#stack overflow: when there are too many function calls in  memory
+#use the correct base case
+#convert to Iteration
+#
+
+
+def bob_the_great():
+    Students = {
+        "name": "Bob",
+        "age": 21,
+
+    }
+
+    Broski = ("chopped", "clapped", "mogged")
+
+    Broski.count("chopped")
+
+bob_the_great()
+
+def recursion(n:int):
+    if n < 0:
+        return n
+    #this is the base case
+
+    print(n)
+    return recursion(n-1)
+#tail recursion because its being called at the very end
+#it is direct recursionn because its calling itself within itself
+
+recursion(5)
+
+#indirect recursion
+def a(n):
+#    if n > 0:
+#        print(f"Inside a {n}")
+#        return b(n-1)
+
+    if n > 1:
+        return n
+    else:
+        print(f"Inside a{n}")
+        return b(n-1)
+
+def b(n):
+    if n > 0:
+        print(f"Inside b {n}")
+        return a(n-1)
+
+a(5)
+
+
+
+
+
+
+
+
+
 
 
 
