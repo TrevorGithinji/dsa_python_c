@@ -264,6 +264,83 @@ def b(n):
 
 a(5)
 
+#everything after the return statement never gets reached
+#head recursion
+def head_recursion(n):
+    if n < 1:
+        return n
+
+    head_recursion(n-1)
+    print(n)
+
+head_recursion(6)
+#stack: last in first out(pull)
+
+print("*******************************")
+
+def a():
+    print(f"1")
+    b()
+    print(f"2")
+
+def b():
+    print(f"3")
+    c()
+    print(f"4")
+
+def c():
+    print(f"5")
+#there are instructions first before we print the numbewre after
+#its passed onto the
+
+a()
+print("*******************************")
+
+#return address and parameters and local variables
+
+#binary search works with sorted data
+def linear_search(values, target):
+    for item in range(len(values)):
+        if values[item] == target:
+            print("target found at index:", item)
+            return item
+        return -1
+
+def get_values():
+    values = random.sample(range(10, 20), 10)
+    print(f"The list of value: {values}")
+    target = int(input("enter value to search: "))
+    result = linear_search(values, target)
+    if result != -1:
+        print(f"The value at index {result} is {values[result]}")
+    else:
+        print("target not found")
+
+#for loop iriterate the values
+get_values()
+
+def binary_recursion(values,target,low,high):
+    if low > high:
+        return -1
+
+    mid = (low + high) // 2
+    if values[mid] == target:
+        return mid
+    elif values[mid] > target:
+        return binary_recursion(values,target,low,mid - 1)
+    else:
+        return binary_recursion(values,target,mid + 1,high)
+
+
+def get_values():
+    values = random.sample(range(-10, 10), 5)
+    values = sorted(values)
+    print(f"The list of value: {values}")
+    target = int(input("enter value to search: "))
+    result = binary_recursion(values,target,0,len(values) -1)
+    if result != -1:
+        print(f"The value at index {result} is {values[result]}")
+
 
 
 
